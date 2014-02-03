@@ -4,12 +4,16 @@ ruby '2.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+# Added to irreversibly encrypt the password to form the password hash
+gem 'bcrypt-ruby', '3.1.2'
+
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
   gem 'guard-rspec', '2.5.0'
   gem 'spork-rails', '4.0.0'
+  # Testing App
   gem 'guard-spork', '1.5.0'
   gem 'childprocess', '0.3.6'
 end
@@ -28,8 +32,10 @@ gem 'uglifier', '2.1.1'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '4.0.1'
 
+# Added for testing
 gem 'pry'
 
+# Added for image manipulation
 gem 'rmagick'
 
 
