@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-DateApplication::Application.config.secret_key_base = '57e85f416866c5b6eaf5172c29586389af0a11e09ab5d7efbabbc5e3bfb15dafa0246e0ae37e2f3e75a01af24436a78374b6021de33849797ba0c44b100905fc'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+DateApplication::Application.config.secret_key_base = secure_token
