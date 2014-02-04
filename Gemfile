@@ -4,8 +4,9 @@ ruby '2.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Added to irreversibly encrypt the password to form the password hash
-gem 'bcrypt-ruby', '3.1.2'
+gem 'bootstrap-sass', '2.3.2.0'
+
+
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
@@ -14,6 +15,7 @@ group :development, :test do
   gem 'guard-rspec', '2.5.0'
   gem 'spork-rails', '4.0.0'
   # Testing App
+  gem 'better_errors'
   gem 'guard-spork', '1.5.0'
   gem 'childprocess', '0.3.6'
 end
@@ -21,6 +23,8 @@ end
 group :test do
   gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'factory_girl_rails', '4.2.1'
+  gem 'pry'
 end
 
 # Use SCSS for stylesheets
@@ -32,8 +36,6 @@ gem 'uglifier', '2.1.1'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '4.0.1'
 
-# Added for testing
-gem 'pry'
 
 # Added for image manipulation
 gem 'rmagick'
@@ -63,7 +65,7 @@ group :production do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'

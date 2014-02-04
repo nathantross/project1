@@ -33,4 +33,8 @@ DateApplication::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+  # Redefining the Bcrypt cost factor in a test environment. 
+  ActiveModel::SecurePassword.min_cost = true
+
 end
