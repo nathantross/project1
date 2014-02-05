@@ -31,6 +31,8 @@ gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'linkedin'
 
+gem 'foundation-rails'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
