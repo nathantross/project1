@@ -1,32 +1,26 @@
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Joiyn</a></h1>
+      <h1><%= link_to "Joiyn", root_path %></h1>
     </li>
     <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
   </ul>
 
   <section class="top-bar-section">
     <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="active"><a href="#">Right Button Active</a></li>
-      <li class="has-dropdown">
-        <a href="#">Right Button with Dropdown</a>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-        </ul>
-      </li>
-    </ul>
 
-    <!-- Left Nav Section -->
     <nav>
     <ul class="right">
-              <li><%= link_to "Home", root_path %></li>
-              <li><%= link_to "Help", help_path %></li>
-              <li><%= link_to "About", about_path %></li>
-              <li><%= link_to "Contact", contact_path %></li>
+           
+      <li class="has-dropdown">
+        <a href="#">Menu</a>
+        <ul class="dropdown">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact", contact_path %></li>
         <% if user_signed_in? %>
           <!-- Logged in as <strong><%= current_user.email %></strong>. -->
+          <li><%= link_to "Profile", current_user %></li>
           <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <% else %>
@@ -35,15 +29,14 @@
           <li><%= link_to "LinkedIn Connect", user_omniauth_authorize_path(:linkedin) %></li>
         <% end %>
     </ul>
-          <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
-      <% end %>
     </nav>
   </nav>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, id: "flash_#{name}" %>
       <% end %>
-
+        </ul>
+      </li>
+    </ul>
 
 
 <br>
